@@ -32,7 +32,7 @@
 			<el-table-column prop="addr" label="地址" min-width="180" sortable>
 			</el-table-column>
 			<el-table-column label="操作" width="150">
-				<template scope="scope">
+				<template slot-scope="scope">
 					<el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
 					<el-button type="danger" size="small" @click="handleDel(scope.$index, scope.row)">删除</el-button>
 				</template>
@@ -42,7 +42,7 @@
 		<!--工具条-->
 		<el-col :span="24" class="toolbar">
 			<el-button type="danger" @click="batchRemove" :disabled="this.sels.length===0">批量删除</el-button>
-			<el-pagination layout="prev, pager, next" @current-change="handleCurrentChange" :page-size="20" :total="total" style="float:right;">
+			<el-pagination layout="total,prev, pager, next" @current-change="handleCurrentChange" :page-size="10" :total="total" style="float:right;">
 			</el-pagination>
 		</el-col>
 
@@ -267,6 +267,7 @@
 			},
 			selsChange: function (sels) {
 				this.sels = sels;
+				//console.log("sels:",sels);
 			},
 			//批量删除
 			batchRemove: function () {
@@ -299,5 +300,7 @@
 </script>
 
 <style scoped>
-
+	.toolbar{
+		margin:0;
+	}
 </style>

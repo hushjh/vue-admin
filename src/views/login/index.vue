@@ -1,11 +1,11 @@
 <template>
   <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px" class="demo-ruleForm login-container">
     <h3 class="title">系统登录</h3>
-    <el-form-item prop="account">
-      <el-input type="text" v-model="ruleForm2.account" auto-complete="off" placeholder="账号"></el-input>
+    <el-form-item prop="username">
+      <el-input type="text" v-model="ruleForm2.username" auto-complete="off" placeholder="账号"></el-input>
     </el-form-item>
-    <el-form-item prop="checkPass">
-      <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="密码"></el-input>
+    <el-form-item prop="password">
+      <el-input type="password" v-model="ruleForm2.password" auto-complete="off" placeholder="密码"></el-input>
     </el-form-item>
     <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox>
     <el-form-item style="width:100%;">
@@ -16,15 +16,15 @@
 </template>
 
 <script>
-  import { requestLogin } from '../api/api';
+  import { requestLogin,getDbData } from '@/api/api';
   //import NProgress from 'nprogress'
   export default {
     data() {
       return {
         logining: false,
         ruleForm2: {
-          account: 'admin',
-          checkPass: '123456'
+          username: 'admin',
+          password: '123456'
         },
         rules2: {
           account: [
@@ -50,7 +50,25 @@
             //_this.$router.replace('/table');
             this.logining = true;
             //NProgress.start();
-            var loginParams = { username: this.ruleForm2.account, password: this.ruleForm2.checkPass };
+            var loginParams = { username: this.ruleForm2.username, password: this.ruleForm2.password };
+            // getDbData('log1',loginParams).then(rd=>{
+            //   console.log('log1:',rd);
+            //   var data=rd.data;
+              
+            //   if(data.length>0 && data[0].succ==='0'){
+            //     let user=data[0];
+            //     console.log("user:",user);
+            //     delete user.succ;
+            //     delete user.msg;
+            //     sessionStorage.setItem('user',JSON.stringify(user));
+            //     this.$router.push({path:'/userAdmin'});
+            //   }else{
+            //     this.$message({
+            //       message:data[0].msg,
+            //       type:'error'
+            //     });
+            //   }
+            // });
             requestLogin(loginParams).then(data => {
               this.logining = false;
               //NProgress.done();

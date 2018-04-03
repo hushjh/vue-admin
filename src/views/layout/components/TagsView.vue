@@ -46,7 +46,18 @@ export default {
             return route.path===this.$route.path || route.name===this.$route.name;
         },
         openView(tag,event){},
-        closeSelectedTag(tag){}
+        closeSelectedTag(view){
+            this.$store.dispatch('delVisitedViews',view).then((views)=>{
+                if(this.isActive(view)){
+                    const lastView=views.slice(-1)[0];
+                    if(lastView){
+                        this.$router.push(lastView.path);
+                    }else{
+                        this.$router.push('/');
+                    }
+                } 
+            });
+        }
     }
 }
 

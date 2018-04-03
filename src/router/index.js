@@ -24,21 +24,31 @@ let routes = [
     },
     //{ path: '/main', component: Main },
     {
-        path: '/',
+        path:'',
+        component:Layout,
+        name:'主页',
+        redirect:'/home',
+        hidden:true,
+        children:[
+            {path:'home',component:_import('home/index'),name:'主页',hidden:true}
+        ]
+    },
+    {
+        path: '/nav1',
         component: Layout,
         name: '导航一',
         iconCls: 'el-icon-message',//图标样式class
         children: [
-            { path: '/main', component: _import('nav1/userAdmin'), name: '主页', hidden: true },
-            { path: '/table', component: _import('nav1/Table'), name: 'Table' },
-            { path: '/form', component: _import('nav1/Form'), name: 'Form' },
-            { path: '/user', component: _import('nav1/user'), name: '列表' },
-            {path:'/userAdmin',component:_import('nav1/userAdmin'),name:'用户管理'},
-            {path:'/comInfo',component:_import('nav1/comInfo'),name:'公司信息管理'}
+            { path: 'main', component: _import('nav1/userAdmin'), name: '主页', hidden: true },
+            { path: 'table', component: _import('nav1/Table'), name: 'Table' },
+            { path: 'form', component: _import('nav1/Form'), name: 'Form' },
+            { path: 'user', component: _import('nav1/user'), name: '列表' },
+            {path:'userAdmin',component:_import('nav1/userAdmin'),name:'用户管理'},
+            {path:'comInfo',component:_import('nav1/comInfo'),name:'公司信息管理'}
         ]
     },
     {
-        path: '',
+        path: '/nav2',
         component: Layout,
         name: '导航二',
         iconCls: 'fa fa-id-card-o',
@@ -48,22 +58,21 @@ let routes = [
         ]
     },
     {
-        path: '',
-        component: Layout,
-        name: '',
-        iconCls: 'fa fa-address-card',
-        leaf: true,//只有一个节点
-        children: [
-            { path: 'page6', component: _import('nav3/Page6'), name: '导航三' }
-        ]
-    },
-    {
-        path: '',
+        path: '/charts',
         component: Layout,
         name: 'Charts',
         iconCls: 'fa fa-bar-chart',
         children: [
             { path: 'echarts', component: _import('charts/echarts'), name: 'echarts' }
+        ]
+    },
+    {
+        path:'/components',
+        component:Layout,
+        name:'组件',
+        iconCls:'el-icon-document',
+        children:[
+            {path:'sticky',component:_import('components-demo/sticky'),name:'置顶'}
         ]
     },
     {

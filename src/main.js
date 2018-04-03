@@ -13,7 +13,7 @@ import  './permission' //permission control
 import Mock from './mock'
 Mock.bootstrap();
 
-import 'font-awesome/css/font-awesome.min.css'
+//import 'font-awesome/css/font-awesome.min.css'
 
 Vue.use(ElementUI)
 

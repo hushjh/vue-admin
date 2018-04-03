@@ -4,14 +4,15 @@ import VueRouter from 'vue-router'
 import Layout from '@/views/layout'
 import Main from '@/views/Main.vue'
 
-
+import Login from '@/views/login'
+console.log('router:',process.env.NODE_ENV);
 const _import=require('./_import_'+process.env.NODE_ENV)
 
 Vue.use(VueRouter)
 let routes = [
     {
         path: '/login',
-        component: _import('login/index'),
+        component: Login,
         name: '',
         hidden: true
     },

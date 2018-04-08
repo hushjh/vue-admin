@@ -46,11 +46,10 @@ export default {
     margin-right:40px;
 }
 .right-main{
-    width: calc(100% - 20px);
     box-sizing: border-box;
-    padding: 20px;
     height: calc(100vh - 115px);
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 </style>

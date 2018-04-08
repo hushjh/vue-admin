@@ -72,7 +72,8 @@ let routes = [
         name:'组件',
         iconCls:'el-icon-document',
         children:[
-            {path:'sticky',component:_import('components-demo/sticky'),name:'置顶'}
+            {path:'sticky',component:_import('components-demo/sticky'),name:'置顶'},
+            {path:'countTo',component:_import('components-demo/countTo'),name:'CountTo'}
         ]
     },
     {

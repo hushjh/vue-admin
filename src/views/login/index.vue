@@ -80,6 +80,7 @@
                 });
               } else {
                 sessionStorage.setItem('user', JSON.stringify(user));
+                this.$store.dispatch('set_roles',['admin']);
                 this.$router.push({ path: '/home' });
               }
             });

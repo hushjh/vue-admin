@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import app from './modules/app'
+import user from './modules/user'
 import tagsView from './modules/tagsView'
 
 Vue.use(Vuex);
@@ -12,7 +13,8 @@ const state = {
 export default new Vuex.Store({
     modules:{
         app,
-        tagsView
+        tagsView,
+        user
     },
     state
 });

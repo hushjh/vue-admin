@@ -3,21 +3,29 @@
   <div class='home-editor-container'>
     <github-corner></github-corner>
     <panel-group></panel-group>
+    <el-row>
+      <line-charts></line-charts>
+    </el-row>
   </div>
 </template>
 
 <script>
 import GithubCorner from '@/components/githubCorner'
 import PanelGroup from './components/panelGroup'
+import lineCharts from './components/lineCharts'
 export default {
   name:'adminHome',
   components:{
     GithubCorner,
-    PanelGroup
+    PanelGroup,
+    lineCharts
   },
   data () {
     return {
     };
+  },
+  mounted(){
+    
   }
 }
 

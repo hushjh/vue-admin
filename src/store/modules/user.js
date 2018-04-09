@@ -1,6 +1,6 @@
 const user={
     state:{
-        roles:[]
+        roles:['admin']
     },
     mutations:{
         SET_ROLES(state,roles){

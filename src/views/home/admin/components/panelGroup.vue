@@ -12,6 +12,39 @@
         </div>
       </div>
     </el-col>
+    <el-col :xs='12' :sm='12' :lg='6' class='card-panel-col'>
+      <div class='card-panel' >
+        <div class='card-panel-icon-wrapper icon-people'>
+          <icon name='message' :scale='5' ></icon>
+        </div>
+        <div class='card-panel-description'>
+          <div class="card-panel-text">Messages</div>
+          <count-to class="card-panel-num" :startVal='0' :endVal='81212' :duration='2600'></count-to>
+        </div>
+      </div>
+    </el-col>
+    <el-col :xs='12' :sm='12' :lg='6' class='card-panel-col'>
+      <div class='card-panel' >
+        <div class='card-panel-icon-wrapper icon-people'>
+          <icon name='money' :scale='5' ></icon>
+        </div>
+        <div class='card-panel-description'>
+          <div class="card-panel-text">Purchases</div>
+          <count-to class="card-panel-num" :startVal='0' :endVal='9280' :duration='3200'></count-to>
+        </div>
+      </div>
+    </el-col>
+    <el-col :xs='12' :sm='12' :lg='6' class='card-panel-col'>
+      <div class='card-panel' >
+        <div class='card-panel-icon-wrapper icon-people'>
+          <icon name='shoppingCard' :scale='5' ></icon>
+        </div>
+        <div class='card-panel-description'>
+          <div class="card-panel-text">Purchases</div>
+          <count-to class="card-panel-num" :startVal='0' :endVal='13600' :duration='3600'></count-to>
+        </div>
+      </div>
+    </el-col>
   </el-row>
 </template>
 
@@ -29,6 +62,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 .panel-group{
+  margin-top:18px;
   .card-panel-col{
     margin-bottom:32px;
     .card-panel{

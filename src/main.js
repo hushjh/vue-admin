@@ -12,7 +12,9 @@ import  './permission' //permission control
 //后台模拟数据
 import Mock from './mock'
 Mock.bootstrap();
-
+//svg 图片插件
+import Icon from 'vue-svg-icon/Icon.vue'
+Vue.component('icon',Icon)
 //import 'font-awesome/css/font-awesome.min.css'
 
 Vue.use(ElementUI)

@@ -34,6 +34,7 @@ export default {
     if (!this.chart) {
       return
     }
+    window.removeEventListener('resize', this.__resizeHanlder)
     this.chart.dispose()
     this.chart = null
   },

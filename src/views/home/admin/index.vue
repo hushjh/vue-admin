@@ -6,6 +6,34 @@
     <el-row class='chart-wrapper'>
       <line-charts :chart-data='lineChartData'></line-charts>
     </el-row>
+    <el-row :gutter='32'>
+      <el-col :xs='24' :sm='24' :lg='8'>
+        <div class="chart-wrapper">
+          <raddar-chart></raddar-chart>
+        </div>
+      </el-col>
+      <el-col :xs='24' :sm='24' :lg='8'>
+        <div class="chart-wrapper">
+          <pie-chart></pie-chart>
+        </div>
+      </el-col>
+      <el-col :xs='24' :sm='24' :lg='8'>
+        <div class="chart-wrapper">
+          <bar-chart></bar-chart>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :xs='{span:24}' :sm='{span:24}' :md='{span:24}' :lg='{span:12}' :xl='{span:12}'>
+        <transaction-table></transaction-table>
+      </el-col>
+      <el-col :xs='{span:12}' :sm='{span:12}' :md='{span:12}' :lg='{span:6}' :xl='{span:6}'>
+        <todo-list></todo-list>
+      </el-col>
+      <el-col :xs='{span:12}' :sm='{span:12}' :md='{span:12}' :lg='{span:6}' :xl='{span:6}'>
+        <box-card></box-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -13,6 +41,12 @@
 import GithubCorner from '@/components/githubCorner'
 import PanelGroup from './components/panelGroup'
 import lineCharts from './components/lineCharts'
+import raddarChart from './components/raddarChart'
+import pieChart from './components/pieChart'
+import barChart from './components/barChart'
+import transactionTable from './components/transactionTable'
+import todoList from './components/todoList/index'
+import boxCard from './components/boxCard'
 const lineChartData = {
   newVisitis: {
     expectedData: [100, 120, 161, 134, 105, 160, 165],
@@ -36,7 +70,13 @@ export default {
   components:{
     GithubCorner,
     PanelGroup,
-    lineCharts
+    lineCharts,
+    raddarChart,
+    pieChart,
+    barChart,
+    transactionTable,
+    todoList,
+    boxCard
   },
   data () {
     return {
@@ -60,4 +100,5 @@ export default {
     margin-bottom: 32px;
   }
 }
+
 </style>

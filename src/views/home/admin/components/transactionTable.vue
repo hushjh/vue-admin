@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <el-table :data='list' style='width:100%;padding-top:15px'>
+    <el-table :data='list' style='width:100%;padding-top:15px;background-color:#fff;'>
       <el-table-column label='Order_No'  show-overflow-tooltip>
         <template slot-scope='scope'>
           {{scope.row.order_no}}
@@ -90,5 +90,11 @@ export default {
 }
 
 </script>
-<style lang='css' scoped>
+<style lang='css'>
+.el-table th{
+  background-color:#fff;
+}
+.el-table__header-wrapper thead div{
+  background-color:#fff;
+}
 </style>

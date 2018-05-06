@@ -56,4 +56,4 @@ Modern browsers and IE 10+.
 # License
 [MIT](http://opensource.org/licenses/MIT)
 
-creating a new branch is quick
+Creating a new branch is quick AND simple.
